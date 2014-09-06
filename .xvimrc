@@ -1,0 +1,6 @@
+imap jj <Esc>
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+set clipboard=unnamed
+
