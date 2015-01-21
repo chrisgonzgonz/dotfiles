@@ -390,17 +390,36 @@ map <F7> :set wrap!<CR>
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
-" Add word processor mode
+" Add word processor mode (Joe's)
+" func! WordProcessorMode() 
+"   setlocal formatoptions=1 
+"   setlocal spell spelllang=en_us 
+"   set thesaurus+=/Users/chrisgonzales/mthesaur.txt
+"   set complete+=s
+"   set formatprg=par
+"   setlocal wrap 
+"   setlocal linebreak 
+" endfu 
+"
+" com! WP call WordProcessorMode()
+
+" Word processor mode (Dr. Bunsen)
 func! WordProcessorMode() 
   setlocal formatoptions=1 
+  setlocal noexpandtab 
+  " map j gj 
+  " map k gk
   setlocal spell spelllang=en_us 
-  set thesaurus+=/Users/joe/.vim/thesaurus/mthesaur.txt
-  set complete+=s
+  set thesaurus+=/Users/chrisgonzales/.vim/thesaurus/mthesaur.txt
+  " set complete+=s
   set formatprg=par
   setlocal wrap 
   setlocal linebreak 
+  highlight clear SpellBad
+  highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+  set complete+=kspell
+  
 endfu 
-
 com! WP call WordProcessorMode()
 
 " yank to clipboard by default
@@ -410,3 +429,4 @@ set clipboard+=unnamed
 " let g:instant_markdown_autostart = 0
 " map <F10> :InstantMarkdownPreview<CR>
 syntax on
+

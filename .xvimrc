@@ -1,6 +1,69 @@
 imap jj <Esc>
+
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
 set clipboard=unnamed
+
+nnoremap // :xccmd commentAndUncommentCurrentLines<CR>
+vnoremap // :xccmd commentAndUncommentCurrentLines<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tab
+" note: if tabprevious and tabnext lost editor focus,
+"       try :xccmd.
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tab new
+map ,tn :xccmd newTab<CR>
+" tab close
+map ,tc :xccmd closeCurrentTab<CR>
+" map ,tc :tabclose<CR>
+" tab pre
+" map ,ti :xccmd selectPreviousTab<CR>
+map ,n :xccmd selectPreviousTab<CR>
+" map ,ti :tabprevious<CR>
+" tab next
+" map ,to :xccmd selectNextTab<CR>
+map ,m :xccmd selectNextTab<CR>
+" map ,to :tabnext<CR>
+
+
+" open Documentation and API Reference    
+" map ,doc :xccmd showDeveloperDocumentation<CR>
+" show quick help for current word
+map ,h :xhelp<CR>
+" search document for text cursor points to.
+map ,sh :xccmd searchDocumentationForSelectedText<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" View 
+" Note: standard editor shortkey is convenient
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code Snippet Library
+map ,cs :xcmenucmd Show Code Snippet Library<CR>
+" File Template Library
+    map ,ft :xcmenucmd Show File Template Library<CR>
+" Media Library
+    map ,ml :xcmenucmd Show Media Library<CR>
+" (Quick) help Inspector
+    map ,hi :xcmenucmd Show Quick Help Inspector<CR>
+" File inspector
+    map ,fi :xcmenucmd Show File Inspector<CR>
+
+" toggle navigator, debug area, utilities, ToolBar  
+" l-left, b-bottom, r-right, t-top or toolbar
+map ,tl :xccmd toggleNavigatorsVisibility<CR>
+map ,tb :xccmd toggleDebuggerVisibility<CR>
+map ,tr :xccmd toggleUtilitiesVisibility<CR>
+map ,tt :xccmd toggleToolbarShown<CR>
+
+
+" switch between .h/.m
+" You can use vim cmd |gd| and |ctrl+i/o| to navigate between files.
+" map ,n :xccmd jumpToNextCounterpart<CR>  
+map ,, :xccmd jumpToNextCounterpart<CR>  
+    " place holder is Like <#...#>,  jump to front of placeholder then use
+    " Key Tab.  
+        "map ,np :xccmd selectNextPlaceholder<CR> 
+            "map ,pp :xccmd selectPreviousPlaceholder<CR>
 
