@@ -51,9 +51,9 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
-colorscheme solarized
-set background=light " or dark
-set t_Co=256
+" colorscheme solarized
+" set background=light " or dark
+" set t_Co=256
 
 set splitbelow splitright
 

@@ -1,9 +1,13 @@
 imap jj <Esc>
+imap jj <Esc>
+set clipboard=unnamed
+set ignorecase
+set smartcase
+set relativenumber
 
+" Press Enter to add a new blank line
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
-
-set clipboard=unnamed
 
 nnoremap // :xccmd commentAndUncommentCurrentLines<CR>
 vnoremap // :xccmd commentAndUncommentCurrentLines<CR>
